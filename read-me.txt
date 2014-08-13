@@ -1,0 +1,25 @@
+Approach
+
+Install node.js on ubuntu
+
+version 0.13.0 installed and compiled
+
+Some pre-requisites for parsing an rss feed:
+npm install feed-read, a node.js module for parsing rss feeds into articles
+Source : https://www.npmjs.org/package/feed-read
+
+BBC rss feed : http://feeds.bbci.co.uk/news/rss.xml
+Sky feed : http://news.sky.com/feeds/rss/home.xml
+
+
+
+Modules required
+HTTP Server module
+Feed module
+Possibly the modues below, depending on how abstracted I decide to make the solution
+Router module
+Request Handler module
+
+
+
+
