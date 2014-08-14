@@ -13,16 +13,21 @@ function getFeed(res, urls, numItems) {
 	}
 	// callback function to write out the feeds and close the response object when complete
 	function onComplete(err, newsItems){
-			feedsDone++;
+		feedsDone++;
+		if(err){
+			console.log(err.message)
+		}
+		else {
 			// loop around to get 10 items
 			for(var counter = 0; counter < 10; counter++) {				
-					res.write("<div><a title=\"" + newsItems[counter].title + "\" href=\""+ newsItems[counter].link + "\">" + newsItems[counter].title + "</a></div>");																	
+				res.write("<div><a title=\"" + newsItems[counter].title + "\" href=\""+ newsItems[counter].link + "\">" + newsItems[counter].title + "</a></div>");																	
 			}
+		}
 																	
-			if (feedsDone == urls.length){
-				res.end("</body></html>");
-			}
-		}			
+		if (feedsDone == urls.length){
+			res.end("</body></html>");
+		}
+	}			
 	
 }
 
